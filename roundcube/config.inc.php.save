@@ -1,0 +1,88 @@
+$config = array();/*
++-----------------------------------------------------------------------+
+| Local configuration for the Roundcube Webmail installation.           |
+|                                                                       |
+| This is a sample configuration file only containing the minimum       |
+| setup required for a functional installation. Copy more options       |
+| from defaults.inc.php to this file to override the defaults.          |
+|                                                                       |
+| This file is part of the Roundcube Webmail client                     |
+| Copyright (C) 2005-2013, The Roundcube Dev Team                       |
+|                                                                       |
+| Licensed under the GNU General Public License version 3 or            |
+| any later version with exceptions for skins & plugins.                |
+| See the README file for a full license statement.                     |
++-----------------------------------------------------------------------+
+*/
+
+$config = array();
+include_once("/etc/roundcube/debian-db-roundcube.php");
+
+// IMAP server host 
+$config['default_host'] = 'ssl://mx.trajearteoaxaca.com';
+$config['default_port'] = 993;
+$config['imap_auth_type'] = 'LOGIN';
+
+// SMTP server host (for sending mails).
+$config['smtp_server'] = 'tls://mx.trajearteoaxaca.com';
+$config['smtp_port'] = 587;
+
+// SMTP username (if required) if you use %u as the username Roundcube
+// will use the current username for login
+$config['smtp_user'] = '%u';
+
+// SMTP password (if required) if you use %p as the password Roundcube
+$config['smtp_pass'] = '%p';
+
+// provide an URL where a user can get support for this Roundcube installation
+// PLEASE DO NOT LINK TO THE ROUNDCUBE.NET WEBSITE HERE!
+$config['support_url'] = '';
+
+// Name your service. This is displayed on the login screen and in the window title
+$config['product_name'] = 'Roundcube Webmail';
+
+// YOUR KEY MUST BE DIFFERENT THAN THE SAMPLE VALUE FOR SECURITY REASONS
+$config['des_key'] = 'GKALj8aPfXRfxjp3ZljKhex5';config['des_key'] = '2P0w9QIi47DWO05BOO4kQxdi';
+
+// List of active plugins (in plugins/ directory)
+$config['plugins'] = array(
+	'virtuser_query',
+	'additional_message_headers',
+	'archive',
+	'emoticons',
+//	'help',
+//	'hide_blockquote',
+	'identity_select',
+	'legacy_browser',
+//	'managesieve',
+	'markasjunk',
+	'newmail_notifier',
+	'new_user_dialog',
+	'new_user_identity',
+	'password',
+	'rcguard',
+	'show_additional_headers',
+//	'subscriptions_option',
+//	'userinfo',
+	'vcard_attachments',
+	'zipdownload',
+//	'xskin',
+   	'identicon',
+//	'enigma',
+	'dkimstatus'
+);
+
+// skin name: folder from skins/
+$config['skin'] = 'larry';
+
+// Disable spellchecking
+// Debian: spellshecking needs additional packages to be installed, or calling external APIs
+//         see defaults.inc.php for additional informations
+$config['enable_spellcheck'] = false;
+
+$config['smtp_auth_type'] = 'LOGIN';
+$config['product_name'] = 'Byteman.io - Curso de email server Udemy';
+$config['useragent'] = 'Roundcube Webmail';
+
+$config['virtuser_query'] = "SELECT email FROM mailserver.virtual_users WHERE email = '%u'";
+$config['des_key'] = '2P0w9QIi47DWO05BOO4kQxdi';
